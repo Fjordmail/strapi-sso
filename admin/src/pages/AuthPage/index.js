@@ -1,11 +1,11 @@
 import { Padded } from '@buffetjs/core';
 import axios from 'axios';
-import forms from 'ee_else_ce/containers/AuthPage/utils/forms';
 import { camelCase, get, omit, upperFirst } from 'lodash';
 import PropTypes from 'prop-types';
 import React, { useEffect, useReducer } from 'react';
 import { Redirect, useHistory, useRouteMatch } from 'react-router-dom';
 import { BaselineAlignment, auth, useQuery } from 'strapi-helper-plugin';
+import forms from './utils/forms';
 
 import NavTopRightWrapper from '../../components/NavTopRightWrapper';
 import PageTitle from '../../components/PageTitle';
