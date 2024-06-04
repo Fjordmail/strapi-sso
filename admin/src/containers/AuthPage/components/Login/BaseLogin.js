@@ -6,7 +6,6 @@ import { useIntl } from 'react-intl';
 import { BaselineAlignment } from 'strapi-helper-plugin';
 
 import Button from '../../../../components/FullWidthButton';
-import LoginButton from '../../../../components/LoginButton';
 import AuthLink from '../AuthLink';
 import Box from '../Box';
 import Input from '../Input';
@@ -75,7 +74,7 @@ const Login = ({
 						</form>
 						{children}
 					</Box>
-					<LoginButton />
+					<div>test</div>
 				</BaselineAlignment>
 			</Section>
 			<AuthLink
