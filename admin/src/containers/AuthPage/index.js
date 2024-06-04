@@ -336,6 +336,7 @@ const AuthPage = ({ hasAdmin, setHasAdmin }) => {
 					onSubmit={handleSubmit}
 					requestError={requestError}
 				/>
+				<div>test</div>
 			</BaselineAlignment>
 		</Padded>
 	);
