@@ -27,18 +27,6 @@ export default {
 			initializer: Initializer,
 			isReady: false,
 			name,
-			injectionZones: {
-				authPage: {
-					'sso-btn': [],
-				},
-			},
-		});
-	},
-
-	bootstrap(app) {
-		app.getPlugin(pluginId).injectComponent('authPage', 'sso-btn', {
-			name: 'sso-btn',
-			Component: () => 'This component is injected',
 		});
 	},
 	async registerTrads({ locales }) {

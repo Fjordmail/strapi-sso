@@ -16,8 +16,6 @@ import LocaleToggle from '../LocaleToggle';
 import init from './init';
 import { initialState, reducer } from './reducer';
 
-import { InjectionZone } from '@strapi/helper-plugin';
-
 const AuthPage = ({ hasAdmin, setHasAdmin }) => {
 	const { push } = useHistory();
 	const changeLocale = useChangeLanguage();
@@ -339,7 +337,7 @@ const AuthPage = ({ hasAdmin, setHasAdmin }) => {
 					requestError={requestError}
 				/>
 			</BaselineAlignment>
-			<InjectionZone area="strapi-sso.authPage.sso-btn" />
+			<LoginButton />
 		</Padded>
 	);
 };
