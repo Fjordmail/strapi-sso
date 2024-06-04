@@ -337,7 +337,6 @@ const AuthPage = ({ hasAdmin, setHasAdmin }) => {
 					requestError={requestError}
 				/>
 			</BaselineAlignment>
-			<LoginButton />
 		</Padded>
 	);
 };
