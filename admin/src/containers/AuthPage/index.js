@@ -17,6 +17,12 @@ import init from './init';
 import { initialState, reducer } from './reducer';
 
 const AuthPage = ({ hasAdmin, setHasAdmin }) => {
+	return (
+		<div>
+			<h1>test</h1>
+		</div>
+	);
+
 	const { push } = useHistory();
 	const changeLocale = useChangeLanguage();
 	const {
