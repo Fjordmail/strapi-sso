@@ -17,12 +17,6 @@ import init from './init';
 import { initialState, reducer } from './reducer';
 
 const AuthPage = ({ hasAdmin, setHasAdmin }) => {
-	return (
-		<div>
-			<h1>test</h1>
-		</div>
-	);
-
 	const { push } = useHistory();
 	const changeLocale = useChangeLanguage();
 	const {
@@ -48,7 +42,6 @@ const AuthPage = ({ hasAdmin, setHasAdmin }) => {
 	const source = CancelToken.source();
 
 	useEffect(() => {
-		// Cancel request on unmount
 		return () => {
 			source.cancel('Component unmounted');
 		};
@@ -90,15 +83,12 @@ const AuthPage = ({ hasAdmin, setHasAdmin }) => {
 						message: errorMessage,
 					});
 
-					// Redirect to the oops page in case of an invalid token
-					// @alexandrebodin @JAB I am not sure it is the wanted behavior
 					push(`/auth/oops?info=${encodeURIComponent(errorMessage)}`);
 				}
 			};
 
 			getData();
 		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [authType]);
 
 	const handleChange = ({ target: { name, value } }) => {
@@ -304,11 +294,6 @@ const AuthPage = ({ hasAdmin, setHasAdmin }) => {
 			}
 		}
 	};
-
-	// Redirect the user to the login page if
-	// the endpoint does not exist or
-	// there is already an admin user oo
-	// the user is already logged in
 	if (
 		!forms[authType] ||
 		(hasAdmin && authType === 'register-admin') ||
@@ -317,7 +302,6 @@ const AuthPage = ({ hasAdmin, setHasAdmin }) => {
 		return <Redirect to="/" />;
 	}
 
-	// Redirect the user to the register-admin if it is the first user
 	if (!hasAdmin && authType !== 'register-admin') {
 		return <Redirect to="/auth/register-admin" />;
 	}
